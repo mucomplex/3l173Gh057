@@ -1,1 +1,0 @@
-!function(o,t,i){"use strict";var n=i("#footer-block");n.show();var e=i(window).height(),c=n.height(),l=n.position().top+c;1===i("#footer-block:visible").length&&l<e&&n.css("margin-top",e-l+"px"),i("#go-top").on("click",function(o){o.preventDefault(),i("html, body").animate({scrollTop:0},300)})}(window,document,window.jQuery);
