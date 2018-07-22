@@ -1,0 +1,34 @@
+pin pertama data
+vcc power 3v 
+Vu/Vin  for 5 volt
+
+DHT22 - type heat
+
+ground wire warna hitam
+
+
+inlcude library - manage library -simple dht
+
+
+file-example-simpledht-dht22defalut
+
+edit int pinDHT22 = 2; to int pinDHT22 = D2; // based on choosen define pin
+
+serialmonitor
+
+set baudrate same as Serial.begin(115200);
+
+
+https://drive.google.com/drive/folders/198JH_YaopUiS1kaV5fnSFcgp5N3OOvpE
+
+ext: arduino *.ino
+
+
+install library wifimanager
+install library pubsubclient
+
+
+npm insatall node-red dashboard
+
+
+

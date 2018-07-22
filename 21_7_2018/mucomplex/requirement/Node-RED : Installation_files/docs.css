@@ -1,0 +1,238 @@
+.docs-intro {
+    background: #8f0000;
+    border-top: 10px solid #a22222;
+}
+.docs-intro .content {
+    height: 100px;
+}
+.docs-intro h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 80px 0 100px 0;
+    padding:0;
+    color: #f0f0f0;
+    font-weight: normal;
+}
+.doc-items {
+    list-style-type: none;
+    padding: 0;
+    margin:0 30px 0;
+}
+.doc-items li {
+    box-sizing: border-box;
+    background: #eee;
+    display: inline-block;
+    width: calc(33% - 30px);
+    margin: 10px 10px 50px 10px;
+}
+.doc-items li a.box-link {
+    padding: 15px 10px;
+    width: 100%;
+    height: 100%;
+}
+.doc-items img {
+    vertical-align: top;
+    margin-top: -50px;
+}
+.doc-items h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+.doc-items li a.box-link:hover h2 {
+    color: #eee;
+}
+.doc-item-info {
+    padding: 10px;
+}
+.docs {
+    background: #eee;
+    font-size: 16px;
+}
+.docs .grid {
+    background: #fff;
+    padding: 0 30px;
+    min-height: 730px;
+}
+
+h1.docs-title {
+    border-bottom: 2px solid #B68181;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    font-weight: normal;
+
+}
+ul.toc {
+    position: relative;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 18px 0 20px 0;
+    padding: 0;
+}
+ul.toc ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.toc li:not(.tocheader) a, ul.toc li span {
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #666;
+    border-left: 8px solid #eee;
+    -border-right: 2px solid #B68181;
+    -margin-bottom: 3px;
+}
+ul.toc li.tocheader > span a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+ul.toc li.tocheader {
+    margin-top: 3px;
+}
+ul.toc li:not(.tocheader).active a {
+    border-left-color: #B68181;
+    -border-right-color: #eee;
+    background: #eee;
+}
+ul.toc li:not(.tocheader) a:hover {
+    border-left-color: #B68181;
+}
+ul.toc li.tocheader > span {
+    background: #B68181;
+    border-left-color: #B68181;
+    color: #fff;
+}
+ul.toc li.tocsubheader span {
+    background: none;
+    border-left-color: #eee;
+    color: #666;
+    padding-left: 20px;
+}
+ul.toc li.tocheader li:not(.toctitle) a {
+    padding-left: 40px;
+}
+
+.docs-content a {
+    color: #aa6767;
+}
+.docs-content img {
+    max-width: 100%;
+}
+.docs-content pre {
+    padding: 4px 10px;
+    background: #F3E7E7;
+    color: #533;
+    border-radius: 3px;
+    border: 1px solid #BE9A9A;
+}
+pre,code,.code {
+    font-family: 'Ubuntu Mono', Monospace;
+}
+.code {
+    color: #533;
+    background: #F3E7E7;
+    padding: 2px;
+}
+code {
+    color: #533;
+    background: #F3E7E7;
+    padding: 2px 4px;
+    border-radius:2px;
+}
+
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+pre>code {
+    padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 1.5em 0 0.8em -0.3em;
+}
+h2 {
+    font-size: 1.953em;
+    margin: 1.5em 0 0.8em -0.3em;
+}
+h3 {
+    font-size: 1.563em;
+    margin: 1.5em 0 0.8em  -0.3em;
+}
+h4 {
+    font-size: 1.25em;
+    margin: 1.5em 0 0.8em  -0.3em;
+}
+h5 {
+    font-size: 1.15em;
+    margin: 1.5em 0 0.8em  -0.3em;
+}
+
+.doc-callout {
+    margin: 10px 30px;
+    background: #FFFFE0;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #BE9A9A;
+}
+
+ul.toc li.toc-expander {
+    display: none;
+    position: absolute;
+    width: 35px;
+    right: 0;
+    top: 3px;
+    height: 37px;
+    background: #B68181;
+    text-align: center;
+    line-height: 37px;
+    border-left: 1px solid #fff;
+    color: #eee;
+    z-index: 10;
+
+}
+code.node {
+    border-radius: 6px;
+    border: 1px solid #B68181;
+    background: #fff0f0;
+    color: #555;
+    white-space:nowrap;
+}
+
+@media handheld, only screen and (max-width: 755px) {
+    ul.toc:not(.open) li.tocheader>span {
+        display: none;
+    }
+    ul.toc:not(.open) li.tocheader li:not(.active) {
+        display: none;
+    }
+    ul.toc:not(.open) li.tocheader li.active {
+        padding-right: 37px;
+    }
+    ul.toc li.toc-expander {
+        display: inline;
+    }
+    ul.toc.open li.toc-expander div {
+        transform: rotate(180deg);
+    }
+
+    .doc-items li {
+        width: calc(50% - 30px);
+    }
+}
+
+@media handheld, only screen and (max-width: 450px) {
+    .doc-items li {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,257 @@
+.title {
+    background: url(../images/title-wave.png) no-repeat 0% 100% #8f0000 ;
+    border-top: 10px solid #a22222;
+    text-align: center;
+}
+.intro, .nodes {
+    background: #eee;
+}
+.intro {
+    border-bottom: 2px solid #a22222;
+}
+
+.features {
+    background: #fff;
+}
+
+.links {
+    background: #444;
+}
+/*.community {
+    background: #eee;
+}
+.community .grid div {
+    border: 1px solid red;
+}*/
+.platforms {
+    background: #fff;
+    border-top: 2px solid #a22222;
+    border-bottom: 2px solid #a22222;
+}
+.platforms img {
+    width: 100%;
+    max-width: 300px;
+}
+.platforms h4 {
+    text-align: center;
+    margin: 5px 0;
+}
+a {
+    color: #aa6767;
+}
+a:hover {
+    color:#B77777;
+}
+
+.links .grid {
+    font-size: 16px;
+    color: #aaa;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Arial;
+}
+.links p {
+    margin: 0 0 10px 0;
+}
+
+.links a {
+    color: #eee;
+}
+.links ul {
+    margin:0;
+    padding:0;
+}
+.links .content {
+    height: auto;
+    min-height: 0;
+    margin: 10px auto;
+}
+
+
+.content {
+    min-height: 250px;
+    padding: 60px 0;
+    margin: 0;
+}
+
+.blurb p {
+    margin-top: 0;
+}
+.blurb h3, .nodes h3, .features h3, .community h3, .platforms h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+.feature {
+    max-width: 485px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.feature img {
+    max-width: 445px;
+    width: 100%;
+}
+.title .content {
+    height: 280px;
+}
+.title h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+.title h2 {
+    margin-top: 0px;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    color: #c19e9e;
+}
+.title p {
+    color: #c19e9e;
+}
+.title img {
+    margin: auto;
+    max-width: 769px;
+    width: 100%;
+}
+
+.nodes .content {
+    height: auto;
+    min-height: 0;
+    margin: 40px auto;
+}
+.nodes .col-1-2 .content {
+    width: 290px;
+}
+
+.nodes .grid {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.node-image {
+    width: 100px;
+    vertical-align: top;
+    display: inline-block;
+}
+.node-block {
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.headline h3 {
+    text-align: center;
+}
+.nodes h4 {
+    font-family: "Arial";
+    font-weight: normal;
+    margin-top: 3px;
+    height: 50px;
+    font-size: 16px;
+}
+
+.helplink {
+    text-align: center;
+    font-size: 14px;
+}
+.helplink a {
+    color: #aa6767;
+}
+
+.community {
+    background: #fff;
+}
+.community ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.community h4 {
+    text-align: center;
+}
+.community .blog ul li a {
+    display: inline-block;
+    padding: 10px 5px;
+    width: 100%;
+    height: 100%;
+}
+.community .blog ul li {
+    padding: 0;
+}
+.community .blog ul li:not(:last-child) {
+    border-bottom: 1px dashed #999;
+}
+
+.community .blog ul li span.date {
+    float: right;
+    font-size: 0.8em;
+}
+.community .blog ul li .box-link {
+    border: none;
+}
+.community .social ul li {
+    display: inline-block;
+    box-sizing: border-box;
+    width: calc( 50% - 25px );
+    height: 120px;
+    margin: 10px;
+    text-align: center;
+}
+.community .social ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 25px;
+}
+.community .social ul li a:hover {
+    text-decoration: none;
+    background: #aa6767;
+    color: #eee;
+}
+.users {
+    background: #fff;
+    border-bottom: 2px solid #a22222;
+}
+.users h3 {
+    margin-top:0;
+    text-align: center;
+}
+.users ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.users ul li {
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    width: 200px;
+    vertical-align: middle;
+    background: white;
+}
+.users ul li img {
+    width: 100%;
+}
+
+h3 a.box-link {
+    margin-left: 30px;
+}
+a.box-link {
+    font-size: 14px;
+    display: inline-block;
+    padding: 3px 12px;
+    border: 1px solid #aa6767;
+    border-radius: 1px;
+}
+a.box-link:hover {
+    text-decoration: none;
+    background: #aa6767;
+    color: #eee;
+}
+a.box-link:not(:first-child) {
+    margin-left: 20px;
+}
