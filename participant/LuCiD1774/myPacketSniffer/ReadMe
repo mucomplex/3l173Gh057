@@ -1,0 +1,8 @@
+
+TO run this file, please ensure you are using python3 & running linux.
+Somewhat the htons package having some problems with windows.
+
+Run:
+# python3 mySniffe.py
+
+Goodluck!
