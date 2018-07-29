@@ -1,0 +1,94 @@
+module1:
+print("my name is ahmad fitri")		#print
+input("What is your name:")		#get input
+raw_input("What is your name:")		#get all full line
+
+name = "ahmad fitri" 			#name is variables and "ahmad fitri" is the object
+id(name) 				#id is to find memory location.
+hex(id(name)) 				#will print memory location in hex
+name.__repr__ 				#will print memory location in hex
+
+\n 					#is new line
+''' this is multiple command ''' 	#multiple command
+str("ahmad fitri") 			#regular string 
+unicode("ahmad fitri") 			#unicode string
+
+"A" + "B"  				#concate string
+"A"*20 					#repeat
+string[start:end:steps] 		#slice
+int(number)				#conversion
+str(number)				#conversion
+
+name.find('A') 				#find A in name
+name.replace('A','B') 			#replace A with B in name
+name.split('') 				#split name with space
+
+len(name)				#lenght
+
+number.append('A') 			#append value A at end number variables
+number.reverse() 			#reverse
+mylist.pop()
+mylist.push()
+mylist.insert('2','there') 		#insert 2nd mylist
+del mylist[2] 				#delete 2nd mylist
+
+list(name)				#convert to list
+tuple(name)				#convert to tupple
+
+#Introduction to set
+setA = set([1,2,3,4]) # setting the set
+union: setA|setB
+intersection : setA&setB
+Difference: setA-setB
+
+#dictionary
+dict = {} , dict['name'] = 'fitri'
+dict(name='fitri',age='25')
+dict = {'name':'fitri','age':31}
+dict.has_key(key)
+dict.items()  				#get tuple of item
+dict.keys()    				#get list of key
+dict.values() 				#get list of value
+dict.get(key) 				#get particular item
+dict.clear()   				#delete all item
+del dict[key] 				#delete one item
+
+dir(name) #lists all attributes
+help(string.replace) # list method help
+
+#conditional A and B
+if 
+elif
+else
+while
+break
+continue
+pass
+for item in range(1,10): #iterate
+
+#function 
+def myfunction(a,b):
+
+#class
+class myclass():
+def __init __(self,arg1,arg2) #constructor
+	self.arg1 = arg1
+	self.arg2 = arg2
+
+#module
+import test.py
+from test.py import myclass
+
+#pakage
+1)make directory eg: mylib
+2)make __init__.py
+3)inside __init__.py 
+	from mypython import calculator
+4)inside test.py
+	import mylib
+
+#exception
+try:
+except:
+finally:
+
