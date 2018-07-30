@@ -2,6 +2,7 @@
 python development
 
 DATA TYPE:-
+
 a)Number(int,float/double)
 
 #check if a no is a multiple of 3. if it is, also check if it is a multiple of 7
