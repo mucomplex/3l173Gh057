@@ -166,11 +166,8 @@ By making change into the original file 37292.c on line 143, i replaced gcc to c
 Upload it with meterpreter
 
 > upload /root/ayam
-
 > shell
-
 > chmod 777 ayam
-
 > ./ayam
 
 <img src="Images/26.JPG" width="500px">
@@ -183,7 +180,7 @@ Now lets finish this task by capturing flag in the root /directory
 
 directing to that link, i got this web page **:D**
 
-<img src="Images/28.JPG" width="500px">
+https://github.com/mucomplex/3l173Gh057/blob/master/participant/mreiaz/GoldenEye1/Images/28.JPG
 
 
 ###MREIAZ
