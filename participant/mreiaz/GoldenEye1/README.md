@@ -166,8 +166,11 @@ By making change into the original file 37292.c on line 143, i replaced gcc to c
 Upload it with meterpreter
 
 > upload /root/ayam
+
 > shell
+
 > chmod 777 ayam
+
 > ./ayam
 
 <img src="Images/26.JPG" width="500px">
@@ -183,7 +186,7 @@ directing to that link, i got this web page **:D**
 https://github.com/mucomplex/3l173Gh057/blob/master/participant/mreiaz/GoldenEye1/Images/28.JPG
 
 
-###MREIAZ
+###MREIAZ###
 
 
 
