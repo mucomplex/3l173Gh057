@@ -62,7 +62,7 @@ The password captured: **bird** for **natalya** as shown in the image. I should'
 
 Afterward I accessed the pop3 mail using netcat command and found three messages in **boris** account while two messages in **natalya** account.
 
-<img src="9.JPG" width="250px"><img src="10.JPG" width="250px">
+<img src="9.JPG" height= "200px" width="250px"><img src="10.JPG" height= "200px" width="250px">
 
 Ignored the fourth message ;D here is my finding that could gave me hints on the next step.
 
