@@ -22,7 +22,7 @@ https://www.vulnhub.com/entry/goldeneye-1,240/
 
 **Let's start**
 
-I started with simple nmap of the target to scan all open port. In my case, the IP address was 192.168.0.181.
+I started with simple nmap of the target to scan all open port. In my case, the IP address was 192.168.0.162.
 1. $nmap -p- -A 192.168.0.162 --open
 
 <img src="Images/1.JPG" width="500px">
