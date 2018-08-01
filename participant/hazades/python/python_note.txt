@@ -1,0 +1,59 @@
+#python_development note by hazades
+
+DATA TYPE:-
+a)Number(int,float/double)
+
+#check if a no is a multiple of 3. if it is, also check if it is a multiple of 7
+#6 % 3 = 0; 10 % 3 = 2;
+
+print("Enter a number: ")	#print
+number = int(input())		#input funtion by default read the value as string, so need to cast
+if number % 3 is 0:		#condition -->if the input number divide by 3 and return 0 as balance
+    print("Number is multiple of 3")
+    if number % 7 is 0:
+        print("Number is also multiple of 7")
+    else:
+        print("Number is multiple of 3 but not 7")
+
+
+b)String
+
+w = "lets.SPLIT.the_string.192.168.1.8"		#assign a string into w
+print("Copy string in lowercase: ")
+print(w.lower())				#change the string into lowercase
+print("Split function: ")
+print(w.split("."))				#split the string by specific symbol(dot)
+
+c)List  @Square bracket []
+
+#listName = [obj1, obj2, obj3]
+>>> favfruit = ["apple", "mango", "berry"]	#assigning the list into an array
+>>> favfruit = [0]				#return position number 0
+    'apple'
+>>> favfruit[1] = "orange"			#change the value in position no 1
+>>> favfruit
+    ['apple', 'orange', 'berry']
+    
+#list.append() --> add element on the last index
+#list.insert() --> add element on specific position (1, "orange")
+#list.remove() --> must be in paranthesis eg: favfruit.remove("berry")
+#list.sort() --> sorting by alpha...
+
+d)Tuple  @Bracket ()
+
+#Tuple is a collection of obj that can't be replace.
+eg:-
+>>>historicWarDate = (1914, 1939)
+>>>historicWarDate[0]
+   1914
+>>>del(historicWarDate)
+
+#don't have repleace but have delete function.
+
+e)Dictionary @Curly bracket {}
+#is a collection of key and value in list
+#format as below:
+
+#dictionaryName = {key1 : value1, key2 : value2}
+
+>>>priceOfCamera = {"sony":500, "nikon":600, "canon":700}
