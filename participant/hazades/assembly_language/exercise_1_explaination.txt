@@ -1,5 +1,17 @@
 mov ax, 9ch
 
-This move value of 9c to ax register, ax is 16 bit register while eax is 32 bit register, means the value will become ???? 009C.
+This move value of 9c to ax register, ax is 16 bit register while eax is 32 bit register, means the value will become [???? 009C].
 
-.....nanti sambung penat guna vim x pandai :D 
+mov eax, DDDD 1234
+
+This will totally replace value to latest moved value inside register
+
+mov cl, E5h
+
+as exercise_1.png image, you can see the registry size of AL is 8 bit, same applied for register Cl, Cl contains 8 bit size and the value when moved inside the register will  be [???? ??E5]
+
+mov ah, cl
+
+this will move the value of E5 to AH location as exercise_1.png image, so the value will sub the existing value in the register and become [DDDD E534]
+
+#h at the end stands for hexadecimal number
