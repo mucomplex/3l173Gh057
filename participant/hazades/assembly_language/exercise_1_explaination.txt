@@ -1,0 +1,5 @@
+mov ax, 9ch
+
+This move value of 9c to ax register, ax is 16 bit register while eax is 32 bit register, means the value will become ???? 009C.
+
+.....nanti sambung penat guna vim x pandai :D 
