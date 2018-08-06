@@ -1,0 +1,62 @@
+Dump of assembler code for function main:
+   0x0000057d <+0>:     lea    ecx,[esp+0x4]
+   0x00000581 <+4>:     and    esp,0xfffffff0
+   0x00000584 <+7>:     push   DWORD PTR [ecx-0x4]
+   0x00000587 <+10>:    push   ebp
+   0x00000588 <+11>:    mov    ebp,esp
+   0x0000058a <+13>:    push   ebx
+   0x0000058b <+14>:    push   ecx
+   0x0000058c <+15>:    sub    esp,0x20
+   0x0000058f <+18>:    call   0x62b <__x86.get_pc_thunk.ax>
+   0x00000594 <+23>:    add    eax,0x1a40
+   0x00000599 <+28>:    mov    ebx,DWORD PTR gs:0x14
+   0x000005a0 <+35>:    mov    DWORD PTR [ebp-0xc],ebx
+   0x000005a3 <+38>:    xor    ebx,ebx
+   0x000005a5 <+40>:    mov    DWORD PTR [ebp-0x1b],0x47415c53
+   0x000005ac <+47>:    mov    DWORD PTR [ebp-0x17],0x545d6a5c
+   0x000005b3 <+54>:    mov    DWORD PTR [ebp-0x13],0x5a46515b
+   0x000005ba <+61>:    mov    WORD PTR [ebp-0xf],0x58
+   0x000005c0 <+67>:    mov    BYTE PTR [ebp-0xd],0x0
+   0x000005c4 <+71>:    sub    esp,0x8
+   0x000005c7 <+74>:    lea    edx,[ebp-0x1b]
+   0x000005ca <+77>:    push   edx
+   0x000005cb <+78>:    lea    edx,[eax-0x1904]
+   0x000005d1 <+84>:    push   edx
+   0x000005d2 <+85>:    mov    ebx,eax
+   0x000005d4 <+87>:    call   0x400 <printf@plt>		//current word is :S\AG\j]T[QFZX
+
+
+
+   0x000005d9 <+92>:    add    esp,0x10
+   0x000005dc <+95>:    mov    DWORD PTR [ebp-0x20],0x0
+   0x000005e3 <+102>:   jmp    0x603 <main+134>			//jmp to 134 taken
+
+
+   0x000005e5 <+104>:   lea    edx,[ebp-0x1b]			//S\\AG\\j]T[QFZX				//start loop
+   0x000005e8 <+107>:   mov    eax,DWORD PTR [ebp-0x20]		// first loop ebp-0x20=0
+   0x000005eb <+110>:   add    eax,edx
+   0x000005ed <+112>:   movzx  eax,BYTE PTR [eax]		//ambik value S
+   0x000005f0 <+115>:   xor    eax,0x35				//xor S w 0x35
+   0x000005f3 <+118>:   mov    ecx,eax				//result xor into ecx
+   0x000005f5 <+120>:   lea    edx,[ebp-0x1b]			//$ebp-0x1b=S\\AG\\j]T[QFZX
+   0x000005f8 <+123>:   mov    eax,DWORD PTR [ebp-0x20]
+   0x000005fb <+126>:   add    eax,edx				//S\\AG\\j]T[QFZX to eax
+   0x000005fd <+128>:   mov    BYTE PTR [eax],cl		//
+   0x000005ff <+130>:   add    DWORD PTR [ebp-0x20],0x1
+   0x00000603 <+134>:   mov    eax,DWORD PTR [ebp-0x20]		//
+   0x00000606 <+137>:   cmp    eax,0xe				//compare with 14				//repeat loop
+   0x00000609 <+140>:   jbe    0x5e5 <main+104>
+
+
+   0x0000060b <+142>:   mov    eax,0x0
+   0x00000610 <+147>:   mov    ecx,DWORD PTR [ebp-0xc]
+   0x00000613 <+150>:   xor    ecx,DWORD PTR gs:0x14
+   0x0000061a <+157>:   je     0x621 <main+164>
+   0x0000061c <+159>:   call   0x6a0 <__stack_chk_fail_local>
+   0x00000621 <+164>:   lea    esp,[ebp-0x8]
+   0x00000624 <+167>:   pop    ecx
+   0x00000625 <+168>:   pop    ebx
+   0x00000626 <+169>:   pop    ebp
+   0x00000627 <+170>:   lea    esp,[ecx-0x4]
+   0x0000062a <+173>:   ret
+End of assembler dump.
