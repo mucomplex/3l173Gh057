@@ -1,2 +1,6 @@
 # Testing by MrC
+<<<<<<< HEAD
 Testing for pull request 
+=======
+testing merge to upstream
+>>>>>>> 152448211f2bf9d6e26d2993564baccfc81e2a77
