@@ -1,9 +1,8 @@
 # 3l173Gh057 Members:-
-1. mucomplex  
-2. mreiaz
-3. hazades
-4. Zatchex
-5. Zyr4h444
-6. Macha97  
-7. MrCa$h
-8. LuCiD1774
+0. mucomplex  
+1. mreiaz
+2. hazades
+3. Zyr4h444
+4. Macha97  
+5. MrCa$h
+6. LuCiD1774
