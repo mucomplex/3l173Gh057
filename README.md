@@ -2,8 +2,7 @@
 0. mucomplex  
 1. mreiaz
 2. hazades
-3. Zatchex
-4. Zyr4h444
-5. Macha97  
-6. MrCa$h
-7. LuCiD1774
+3. Zyr4h444
+4. Macha97  
+5. MrCa$h
+6. LuCiD1774
