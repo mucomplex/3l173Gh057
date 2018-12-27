@@ -1,4 +1,7 @@
 # 3l173Gh057 Members:-
+
+One way to become omniscient is by READING.
+
 0. mucomplex  
 1. mreiaz
 2. hazades
