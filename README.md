@@ -1,6 +1,6 @@
 # 3l173Gh057 Members:-
 
-One way to become omniscient is by READING.
+One of the ways to become omniscient is by READING. 
 
 0. mucomplex  
 1. mreiaz
@@ -11,4 +11,4 @@ One way to become omniscient is by READING.
 6. LuCiD1774
 7. excess
 
-This github not update due to large study materials on ourside. and some of the violate privacy. Advanced method and technique only shared to EG teams.
+This repository might not be updated due to the violation of privacy. Advanced methods and techniques are only shared to EG teams through other mediums.
