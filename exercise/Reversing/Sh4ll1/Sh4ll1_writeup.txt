@@ -1,0 +1,109 @@
+Salam and Hi all,
+
+This is my first writeup related to Reverse Engineering(RE).
+
+Before I am doing RE, I have no idea at all about cracking and Assembly Language implementation and stuffs.
+RE is one of the best skill in CyberSecurity path and I do want to explore more on it and moving to Malware Analysis.
+
+Okay lets get back to point, today I am going to show you on how to do simple reversing in UNIX/LINUX platform.
+For your information, by default UNIX/LINUX had embedded with a tool called GNU Debugger(GDB). But in my case, I do prefer to use GDB with peda extension as unfortunately GDB is not that user-friendly.
+
+GDB-Peda is an extension with Python that make the debugging process more neat and interesting. You can clone the extension by:-
+'git clone https://github.com/longld/peda.git'.
+
+Now for exercise, I am using the exercise from Crackmes.one with name Sh4ll5. Let's begin!
+
+1. Download the application and unzip the file:
+crackMe1.bin
+
+2. Check the file type using file command:
+$file crackMe1.bin
+
+3. As it is ELF extension, run using linux command as below:
+$./crackMe1.bin
+
+4. Now the application asking for input to be inserted, let's try a random password and see what happened:
+Password: AAAAA
+Bad password
+
+5. The password is wrong, now let's try to disassemble the app by using GDB:
+$gdb -q crackMe1.bin
+
+6. The lets look for the assembly code in main function:
+gdb-peda$ pdisas main
+
+output:-
+--------------------------------------------
+Dump of assembler code for function main:
+   0x0000000000000a8d <+0>:	push   rbp
+   0x0000000000000a8e <+1>:	mov    rbp,rsp
+   0x0000000000000a91 <+4>:	call   0x9d0 <_Z7systemvv>
+   0x0000000000000a96 <+9>:	call   0x9ec <_Z7systemov>
+   0x0000000000000a9b <+14>:	mov    eax,0x0
+   0x0000000000000aa0 <+19>:	pop    rbp
+   0x0000000000000aa1 <+20>:	ret    
+End of assembler dump.
+--------------------------------------------
+--> From the main fucntion, lets rbp had been push inside stack and then the value of rsp are moved to rbp
+--> there are two others stack functions(0x9d0, 0x9ec) that are suspicious had been called, lets disassemble those:-
+
+7. Disassemble 0x9d0:
+gdb-peda$ pdisas 0x9d0
+
+output:-
+--------------------------------------------
+Dump of assembler code from 0x9d0 to 0x9f0::	Dump of assembler code from 0x9d0 to 0x9f0:
+   0x00000000000009d0 <_Z7systemvv+0>:	push   rbp
+   0x00000000000009d1 <_Z7systemvv+1>:	mov    rbp,rsp
+   0x00000000000009d4 <_Z7systemvv+4>:	mov    DWORD PTR [rbp-0x4],0x5
+   0x00000000000009db <_Z7systemvv+11>:	mov    DWORD PTR [rbp-0x8],0x7
+   0x00000000000009e2 <_Z7systemvv+18>:	mov    DWORD PTR [rbp-0xc],0x1f5
+   0x00000000000009e9 <_Z7systemvv+25>:	nop
+   0x00000000000009ea <_Z7systemvv+26>:	pop    rbp
+   0x00000000000009eb <_Z7systemvv+27>:	ret    
+   0x00000000000009ec <_Z7systemov+0>:	push   rbp
+   0x00000000000009ed <_Z7systemov+1>:	mov    rbp,rsp
+End of assembler dump.
+--------------------------------------------
+--> lets move to address 0x00000000000009d4, from the code, 0x5 had been pushed inside rbp-0x4. As it is "Intel" mode, the way how to read it is read the opcode, then read from right into left.
+--> Next addr shown 0x7 had been pushed inside rbp-0x8 while 0x1f5 had been pushed inside rbp-0xc.
+--> The next opcode shown is to return the stack pointer into main function again.
+
+8. Next from the main before, lets disassemble 0x9ec:
+
+gdb-peda$ pdisas 0x9ec
+
+output:-
+--------------------------------------------
+Dump of assembler code from 0x9ec to 0xa0c::	Dump of assembler code from 0x9ec to 0xa0c:
+   0x00000000000009ec <_Z7systemov+0>:	push   rbp
+   0x00000000000009ed <_Z7systemov+1>:	mov    rbp,rsp
+   0x00000000000009f0 <_Z7systemov+4>:	sub    rsp,0x10
+   0x00000000000009f4 <_Z7systemov+8>:	mov    eax,DWORD PTR [rbp-0x8]
+   0x00000000000009f7 <_Z7systemov+11>:	add    DWORD PTR [rbp-0x4],eax
+   0x00000000000009fa <_Z7systemov+14>:	mov    eax,DWORD PTR [rbp-0x4]
+   0x00000000000009fd <_Z7systemov+17>:	imul   eax,eax,0x2d
+   0x0000000000000a00 <_Z7systemov+20>:	mov    DWORD PTR [rbp-0xc],eax
+   0x0000000000000a03 <_Z7systemov+23>:	mov    DWORD PTR [rbp-0x10],0x0
+   0x0000000000000a0a <_Z7systemov+30>:	lea    rsi,[rip+0x174]        # 0xb85
+End of assembler dump.
+--------------------------------------------
+--> from the addr 0x00000000000009f0, arithmetic function that is SUB opcode had been used, here is the value from RSP been subtract with 10.
+--> Next addr 0x00000000000009f4 shown the value of rbp-0x8(7) had been pushed inside eax register, then eax value had been added to rbp-0x4 that is already contain value 5, means the current value for that register is 12(sum of 5 and 7).
+--> Then the value from rbp-0x4 register will replace the current value of eax; now eax will become 12.
+--> Next opcode is imul that is multiplication, here the value of 0x2d will be multiply with eax value.
+#0x2d is hexadecimal value, change it to decimal then multiply with 12
+
+0x2D == 45
+
+45 x 12 = 540
+
+9. Next is the value from eax had been copied inside rbp then it return to main function, from the main function, we can see the RBP register being pop and return the answer, so let's try to run with the value we just get it.
+
+$./crackMe1.bin
+Password: 540
+Good password
+
+See, it is interesting right? So that's all for now, hopefully you guys can help me to add and improve my writeup.
+
+Thanks!
